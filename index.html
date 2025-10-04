@@ -27,7 +27,7 @@
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Nikolay Gerginov -  Python Full-Stack Developer">
+    <meta name="twitter:title" content="Nikolay Gerginov - Python Full-Stack Developer">
     <meta name="twitter:description" content="Python Full-Stack Developer | Django, React, AI Automation | Sofia, Bulgaria">
     
     <!-- JSON-LD Structured Data -->
@@ -85,7 +85,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Inline Critical CSS -->
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
@@ -112,16 +112,24 @@
         </div>
     </header>
 
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay glass-card" id="mobile-menu-overlay"></div>
+    
     <!-- Mobile Menu -->
-    <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
-    <div class="mobile-menu" id="mobile-menu">
-        <ul class="mobile-menu-links">
-            <li><a class="mobile-menu-link" href="#about">About</a></li>
-            <li><a class="mobile-menu-link" href="#skills">Skills</a></li>
-            <li><a class="mobile-menu-link" href="#experience">Experience</a></li>
-            <li><a class="mobile-menu-link" href="#projects">Projects</a></li>
-            <li><a class="mobile-menu-link" href="#contact">Contact</a></li>
-        </ul>
+    <div class="mobile-menu hero" id="mobile-menu">
+            <button class="mobile-menu-close glass-card"  id="mobile-menu-close" aria-label="Close menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+            </button>
+            
+            <ul class="mobile-menu-links">
+                <li><a class="mobile-menu-link hero glass-card" href="#about">About</a></li>
+                <li><a class="mobile-menu-link hero glass-card" href="#skills">Skills</a></li>
+                <li><a class="mobile-menu-link hero glass-card" href="#experience">Experience</a></li>
+                <li><a class="mobile-menu-link hero glass-card" href="#projects">Projects</a></li>
+                <li><a class="mobile-menu-link hero glass-card" href="#contact">Contact</a></li>
+            </ul>
     </div>
 
     <main>
@@ -170,7 +178,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
             </div>
         </section>
 
@@ -504,59 +511,59 @@
 
         <!-- Education Section -->
         <section class="edu-section" style="background-color: hsl(var(--muted) / 0.3);">
-        <div class="edu-container">
-            <div class="edu-section-header">
-                <h2 class="edu-section-title">Education & Certifications</h2>
-                <p class="edu-section-description">
-                    Continuous learning and professional development
-                </p>
-            </div>
+            <div class="edu-container">
+                <div class="edu-section-header">
+                    <h2 class="edu-section-title">Education & Certifications</h2>
+                    <p class="edu-section-description">
+                        Continuous learning and professional development
+                    </p>
+                </div>
 
-        <div class="edu-flex-columns">
-            <div class="edu-flex-column">
-                <div class="edu-glass-card">
-                    <div class="edu-card-content">
-                        <div class="edu-icon-container">
-                            <i class="fas fa-graduation-cap"></i>
+                <div class="edu-flex-columns">
+                    <div class="edu-flex-column">
+                        <div class="edu-glass-card">
+                            <div class="edu-card-content">
+                                <div class="edu-icon-container">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <h3 class="edu-card-title">Python Full-Stack Developer</h3>
+                                <p class="edu-card-institution"><strong>Software University (SoftUni)</strong></p>
+                                <p class="edu-card-date">Sep 2022 - Jan 2025</p>
+                                <p class="edu-card-description">Comprehensive program covering Python, Django, React, databases, and DevOps</p>
+                            </div>
                         </div>
-                        <h3 class="edu-card-title">Python Full-Stack Developer</h3>
-                        <p class="edu-card-institution"><strong>Software University (SoftUni)</strong></p>
-                        <p class="edu-card-date">Sep 2022 - Jan 2025</p>
-                        <p class="edu-card-description">Comprehensive program covering Python, Django, React, databases, and DevOps</p>
+                    </div>
+
+                    <div class="edu-flex-column">
+                        <div class="edu-glass-card">
+                            <div class="edu-card-content">
+                                <div class="edu-icon-container">
+                                    <i class="fas fa-university"></i>
+                                </div>
+                                <h3 class="edu-card-title">Bachelor's in Business Economics</h3>
+                                <p class="edu-card-institution"><strong>University of National and World Economy</strong></p>
+                                <p class="edu-card-date">Jan 2020 - Jan 2025</p>
+                                <p class="edu-card-description">Strong foundation in business analysis and economics</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="edu-flex-column">
+                        <div class="edu-glass-card">
+                            <div class="edu-card-content">
+                                <div class="edu-icon-container">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <h3 class="edu-card-title">Professional Certifications</h3>
+                                <p class="edu-card-institution"><strong>Multiple Institutions</strong></p>
+                                <p class="edu-card-date">2022 - 2024</p>
+                                <p class="edu-card-description">Django Advanced, PostgreSQL, DevOps, React, and more</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="edu-flex-column">
-                <div class="edu-glass-card">
-                    <div class="edu-card-content">
-                        <div class="edu-icon-container">
-                            <i class="fas fa-university"></i>
-                        </div>
-                        <h3 class="edu-card-title">Bachelor's in Business Economics</h3>
-                        <p class="edu-card-institution"><strong>University of National and World Economy</strong></p>
-                        <p class="edu-card-date">Jan 2020 - Jan 2025</p>
-                        <p class="edu-card-description">Strong foundation in business analysis and economics</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="edu-flex-column">
-                <div class="edu-glass-card">
-                    <div class="edu-card-content">
-                        <div class="edu-icon-container">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <h3 class="edu-card-title">Professional Certifications</h3>
-                        <p class="edu-card-institution"><strong>Multiple Institutions</strong></p>
-                        <p class="edu-card-date">2022 - 2024</p>
-                        <p class="edu-card-description">Django Advanced, PostgreSQL, DevOps, React, and more</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
 
         <!-- Projects Section -->
         <section id="projects" class="section">
@@ -568,7 +575,7 @@
                 <div class="projects-grid">
                     <!-- Project 1 -->
                     <div class="glass-card project-card">
-                        <img alt="E-commerce Platform" class="project-image" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"/>
+                        <img alt="E-commerce Platform" class="project-image" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"/>
                         <div class="project-content">
                             <h3 class="project-title">E-commerce Platform</h3>
                             <p class="project-description">
@@ -581,13 +588,16 @@
                                 <span class="skill-tag skill-tag-primary">Stripe API</span>
                             </div>
                             <div class="project-links">
-                                <a class="btn btn-primary" href="#">GitHub</a>
+                                <a class="btn btn-primary" href="#" aria-label="View E-commerce Platform on GitHub">
+                                    <i class="fab fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
                             </div>
                         </div>
                     </div>
                     <!-- Project 2 -->
                     <div class="glass-card project-card">
-                        <img alt="Task Management App" class="project-image" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"/>
+                        <img alt="Task Management App" class="project-image" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"/>
                         <div class="project-content">
                             <h3 class="project-title">Task Management App</h3>
                             <p class="project-description">
@@ -600,13 +610,16 @@
                                 <span class="skill-tag skill-tag-primary">OpenAI</span>
                             </div>
                             <div class="project-links">
-                                <a class="btn btn-primary" href="#">GitHub</a>
+                                <a class="btn btn-primary" href="#" aria-label="View Task Management App on GitHub">
+                                    <i class="fab fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
                             </div>
                         </div>
                     </div>
                     <!-- Project 3 -->
                     <div class="glass-card project-card">
-                        <img alt="Data Analytics Dashboard" class="project-image" src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"/>
+                        <img alt="Data Analytics Dashboard" class="project-image" src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"/>
                         <div class="project-content">
                             <h3 class="project-title">Data Analytics Dashboard</h3>
                             <p class="project-description">
@@ -619,13 +632,16 @@
                                 <span class="skill-tag skill-tag-primary">Docker</span>
                             </div>
                             <div class="project-links">
-                                <a class="btn btn-primary" href="#">GitHub</a>
+                                <a class="btn btn-primary" href="#" aria-label="View Data Analytics Dashboard on GitHub">
+                                    <i class="fab fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
                             </div>
                         </div>
                     </div>
                     <!-- Project 4 -->
                     <div class="glass-card project-card">
-                        <img alt="AI Content Generator" class="project-image" src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80"/>
+                        <img alt="AI Content Generator" class="project-image" src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"/>
                         <div class="project-content">
                             <h3 class="project-title">AI Content Generator</h3>
                             <p class="project-description">
@@ -638,7 +654,10 @@
                                 <span class="skill-tag skill-tag-primary">JavaScript</span>
                             </div>
                             <div class="project-links">
-                                <a class="btn btn-primary" href="#">GitHub</a>
+                                <a class="btn btn-primary" href="#" aria-label="View AI Content Generator on GitHub">
+                                    <i class="fab fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -697,13 +716,13 @@
                                 </div>
 
                                 <div class="social-links">
-                                    <a href="https://www.linkedin.com/in/nklgerginov/" target="_blank" class="social-link" aria-label="LinkedIn">
+                                    <a href="https://www.linkedin.com/in/nklgerginov/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn Profile">
                                         <i class="fab fa-linkedin-in"></i>
                                     </a>
-                                    <a href="https://github.com/nklgerginov" target="_blank" class="social-link" aria-label="GitHub">
+                                    <a href="https://github.com/nklgerginov" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub Profile">
                                         <i class="fab fa-github"></i>
                                     </a>
-                                    <a href="mailto:nklgerginov@gmail.com" class="social-link" aria-label="Email">
+                                    <a href="mailto:nklgerginov@gmail.com" class="social-link" aria-label="Email Contact">
                                         <i class="fas fa-envelope"></i>
                                     </a>
                                 </div>
@@ -732,14 +751,15 @@
                                 <li><a href="#about">About</a></li>
                                 <li><a href="#skills">Skills</a></li>
                                 <li><a href="#experience">Experience</a></li>
+                                <li><a href="#projects">Projects</a></li>
                             </ul>
                         </div>
                         
                         <div class="footer-section">
                             <h4>Connect</h4>
                             <ul>
-                                <li><a href="https://www.linkedin.com/in/nklgerginov/" target="_blank">LinkedIn</a></li>
-                                <li><a href="https://github.com/nklgerginov" target="_blank">GitHub</a></li>
+                                <li><a href="https://www.linkedin.com/in/nklgerginov/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                                <li><a href="https://github.com/nklgerginov" target="_blank" rel="noopener noreferrer">GitHub</a></li>
                                 <li><a href="mailto:nklgerginov@gmail.com">Email</a></li>
                             </ul>
                         </div>
@@ -752,6 +772,7 @@
             </div>
         </div>
     </footer>
+    
     <!-- JavaScript -->
     <script src="assets/js/scripts.js"></script>
 </body>

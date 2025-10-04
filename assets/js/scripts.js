@@ -23,11 +23,12 @@ function updateThemeIcon(theme) {
     }
 }
 
-// Mobile Menu Functionality - Nuclear Option with Event Delegation
+// Mobile Menu Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
 
     function openMobileMenu() {
         console.log('Opening mobile menu');
@@ -45,31 +46,47 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = '';
     }
 
-    // Use event delegation for ALL mobile menu interactions
-    document.addEventListener('click', function(e) {
-        // Open menu when toggle is clicked
-        if (e.target.closest('#mobile-menu-toggle')) {
+    // Toggle button click - open/close menu
+    mobileMenuToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (mobileMenu.classList.contains('open')) {
+            closeMobileMenu();
+        } else {
             openMobileMenu();
         }
-        
-        // Close menu when close button OR overlay is clicked
-        if (e.target.closest('#mobile-menu') || e.target === mobileMenuOverlay) {
-            closeMobileMenu();
-        }
+    });
 
-        
+    // Close button click - close menu
+    if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', function(e) {
+            e.stopPropagation();
+            closeMobileMenu();
+        });
+    }
+
+    // Overlay click - close menu
+    mobileMenuOverlay.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeMobileMenu();
     });
 
     // Close menu when menu links are clicked
     document.querySelectorAll('.mobile-menu-link').forEach(link => {
-        link.addEventListener('click', closeMobileMenu);
+        link.addEventListener('click', function(e) {
+            closeMobileMenu();
+        });
     });
 
     // Close menu on escape key
-    document.addEventListener('keydown', (e) => {
+    document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
             closeMobileMenu();
         }
+    });
+
+    // Prevent clicks inside the menu from closing it
+    mobileMenu.addEventListener('click', function(e) {
+        e.stopPropagation();
     });
 });
 
@@ -142,7 +159,6 @@ if (contactForm) {
         e.preventDefault();
         
         // Get form data
-        const formData = new FormData(this);
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
         const subject = document.getElementById('subject').value;
@@ -161,13 +177,9 @@ if (contactForm) {
 window.addEventListener('scroll', function() {
     const header = document.querySelector('.header');
     if (window.scrollY > 100) {
-        header.style.background = 'rgba(255, 255, 255, 0.1)';
-        header.style.backdropFilter = 'blur(20px)';
         header.style.boxShadow = '0 4px 24px rgba(0, 0, 0, 0.1)';
     } else {
-        header.style.background = 'rgba(255, 255, 255, 0.05)';
-        header.style.backdropFilter = 'blur(20px)';
-        header.style.boxShadow = 'none';
+        header.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.05)';
     }
 });
 
