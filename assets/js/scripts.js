@@ -197,3 +197,30 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 100 + (index * 50));
     });
 });
+
+// CV Download functionality
+function downloadCV() {
+    // Create a temporary link element
+    const link = document.createElement('a');
+    link.href = 'assets/files/Nikolay_Gerginov_CV.pdf'; // Path to your CV file
+    link.download = 'Nikolay_Gerginov_CV.pdf';
+    link.target = '_blank';
+    
+    // Trigger the download
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+// Add event listeners to all Download CV elements
+function initCVDownload() {
+    const downloadElements = document.querySelectorAll('[data-cv-download]');
+    
+    downloadElements.forEach(element => {
+        element.addEventListener('click', downloadCV);
+        element.style.cursor = 'pointer';
+    });
+}
+
+// Call when DOM is loaded
+document.addEventListener('DOMContentLoaded', initCVDownload);
