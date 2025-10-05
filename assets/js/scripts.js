@@ -152,26 +152,6 @@ document.querySelectorAll('.section').forEach(section => {
     observer.observe(section);
 });
 
-// Form submission handler
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const subject = document.getElementById('subject').value;
-        const message = document.getElementById('message').value;
-        
-        // Here you would typically send the form data to a server
-        // For this example, we'll just show an alert
-        alert(`Thank you for your message, ${name}! I'll get back to you soon.`);
-        
-        // Reset the form
-        this.reset();
-    });
-}
 
 // Add scroll effect to header
 window.addEventListener('scroll', function() {
@@ -202,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function downloadCV() {
     // Create a temporary link element
     const link = document.createElement('a');
-    link.href = 'assets/files/Nikolay_Gerginov_CV.pdf'; // Path to your CV file
+    link.href = 'assets/files/Nikolay_Gerginov_CV.pdf';
     link.download = 'Nikolay_Gerginov_CV.pdf';
     link.target = '_blank';
     
