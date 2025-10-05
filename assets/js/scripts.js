@@ -176,23 +176,26 @@ document.addEventListener('DOMContentLoaded', function() {
             element.classList.add('loaded');
         }, 100 + (index * 50));
     });
+    
+    // Initialize CV Download
+    initCVDownload();
+    
+    // Initialize Scroll Buttons
+    initScrollButtons();
 });
 
 // CV Download functionality
 function downloadCV() {
-    // Create a temporary link element
     const link = document.createElement('a');
     link.href = 'assets/files/Nikolay_Gerginov_CV.pdf';
     link.download = 'Nikolay_Gerginov_CV.pdf';
     link.target = '_blank';
     
-    // Trigger the download
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
 }
 
-// Add event listeners to all Download CV elements
 function initCVDownload() {
     const downloadElements = document.querySelectorAll('[data-cv-download]');
     
@@ -202,5 +205,69 @@ function initCVDownload() {
     });
 }
 
-// Call when DOM is loaded
-document.addEventListener('DOMContentLoaded', initCVDownload);
+// Scroll Buttons Functionality
+function initScrollButtons() {
+    const scrollDownBtn = document.getElementById('scroll-down-btn');
+    const backToTopBtn = document.getElementById('back-to-top-btn');
+    const heroSection = document.getElementById('hero');
+    const aboutSection = document.getElementById('about');
+    
+    console.log('Initializing scroll buttons...', {
+        scrollDownBtn,
+        backToTopBtn,
+        heroSection,
+        aboutSection
+    });
+    
+    // Show/hide scroll buttons based on scroll position
+    function updateScrollButtons() {
+        const scrollPosition = window.scrollY;
+        const heroHeight = heroSection ? heroSection.offsetHeight : 0;
+        
+        // Show scroll-down button only in hero section
+        if (scrollDownBtn) {
+            if (scrollPosition < heroHeight - 100) {
+                scrollDownBtn.classList.add('visible');
+            } else {
+                scrollDownBtn.classList.remove('visible');
+            }
+        }
+        
+        // Show back-to-top button after scrolling down
+        if (backToTopBtn) {
+            if (scrollPosition > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        }
+    }
+    
+    // Scroll down to about section
+    if (scrollDownBtn && aboutSection) {
+        scrollDownBtn.addEventListener('click', function() {
+            console.log('Scroll down button clicked');
+            aboutSection.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+    }
+    
+    // Back to top functionality
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', function() {
+            console.log('Back to top button clicked');
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+    
+    // Update buttons on scroll
+    window.addEventListener('scroll', updateScrollButtons);
+    
+    // Initial check
+    updateScrollButtons();
+}

@@ -1745,3 +1745,95 @@ transform: translateY(-6px) rotate(-45deg);
     transform: translateY(0) scale(0.98);
     transition: transform 0.1s ease;
 }
+
+/* Scroll Buttons */
+.scroll-btn {
+    position: fixed;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    background: linear-gradient(135deg, 
+        hsl(var(--primary-color)) 0%, 
+        hsl(var(--primary-dark)) 100%);
+    color: white;
+    border: 2px solid hsl(var(--primary-color) / 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 
+        0 4px 16px hsl(var(--primary-color) / 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    z-index: 40;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.scroll-btn.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-btn:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 
+        0 6px 24px hsl(var(--primary-color) / 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.scroll-btn:active {
+    transform: translateY(0) scale(0.95);
+}
+
+/* Scroll Down Button */
+.scroll-down-btn {
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounceDown 2s infinite;
+}
+
+.scroll-down-btn.visible {
+    transform: translateX(-50%);
+}
+
+.scroll-down-btn:hover {
+    transform: translateX(-50%) translateY(-2px) scale(1.05);
+}
+
+@keyframes bounceDown {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(8px);
+    }
+}
+
+/* Back to Top Button */
+.back-to-top-btn {
+    bottom: 2rem;
+    right: 2rem;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .scroll-btn {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1rem;
+    }
+    
+    .scroll-down-btn {
+        bottom: 1.5rem;
+    }
+    
+    .back-to-top-btn {
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+}
